@@ -1,0 +1,82 @@
+<mvc:View controllerName="cg.pbs.org.DemoRefine.controller.DetailEdit" 
+    xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 
+    xmlns="sap.m" 
+    xmlns:table="sap.ui.table" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:layout="sap.ui.layout" 
+    xmlns:core="sap.ui.core" 
+    xmlns:chart="sap.chart" 
+    xmlns:data="sap.chart.data">
+    <Page title="Data Cleanse">
+        <content>
+            <layout:BlockLayout background="Default" visible="true">
+                <layout:content>
+                    <layout:BlockLayoutRow scrollable="false">
+                        <layout:content>
+                            <layout:BlockLayoutCell width="2" titleAlignment="Begin" titleLevel="H5">
+                                <layout:content>
+                                    <f:SimpleForm id="idEditForm" editable="true" layout="ResponsiveGridLayout" title="Edit Record" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                                        <f:content>
+                                            <Label text="Record Number" />
+                                            <Text id="idRecord" text="{globalModel>/editContext/recordId}" />
+                                            <Label text="First Name" />
+                                            <Input id="idFname" value="{globalModel>/editContext/firstName}" />
+                                              <Label text="Last Name" />
+                                            <Input id="idLname" value="{globalModel>/editContext/lastName}" />
+                                            <Label text="CompanyName" />
+                                            <Input id="idCompanyName" value="{globalModel>/editContext/companyName}" />
+                                            <Label text="Email" />
+                                            <Input id="idEmail" value="{globalModel>/editContext/email}" />
+                                             <Label text="House Number" />
+                                                             <Input value="{globalModel>/editContext/houseNumber}" class="sapUiTinyMarginEnd" />
+                                                             <Label text="Address Line 1" />
+                                                             <Input value="{globalModel>/editContext/addressLine1}" />
+                                                             <Label text="Address Line 2" />
+                                                             <Input value="{globalModel>/editContext/addressLine2}"  />
+                                                             <Label text="Postal" />
+                                                             <Input value="{globalModel>/editContext/postalCode}" />
+                                        </f:content>
+                                    </f:SimpleForm>
+                                </layout:content>
+                            </layout:BlockLayoutCell>
+                        </layout:content>
+                    </layout:BlockLayoutRow>
+                    <layout:BlockLayoutRow scrollable="false">
+                        <layout:content>
+                            <layout:BlockLayoutCell title="Address Suggestions" width="2" titleAlignment="Begin"  titleLevel="H5">
+                                <layout:content>
+                                	<layout:Grid containerQuery="true" class="sapUiSmallMarginTop">
+		<layout:content>
+		
+		<TileContent footer="Bing" class="sapUiSmallMargin">
+			<content>
+				<NewsContent contentText="21st B Cross Road, MRS Layout, Vishwaneedam, Bangalore"
+					subheader="Confidence 98%" />
+			</content>
+		</TileContent>
+        	<TileContent footer="here" class="sapUiSmallMargin">
+			<content>
+				<NewsContent contentText="21st B Cross Road, MRS Layout, Near East West College, Bangalore"
+					subheader="Confidence 99%" />
+			</content>
+		</TileContent>
+		</layout:content>
+	</layout:Grid>
+                                </layout:content>
+                            </layout:BlockLayoutCell>
+                        </layout:content>
+                    </layout:BlockLayoutRow>
+                </layout:content>
+            </layout:BlockLayout>
+        </content>
+        	<footer>
+			<Bar>
+				<contentRight>
+					<Button id="save" text="Save" type="Emphasized" visible="true" press="handleSavePress" />
+					<Button id="cancel" text="Cancel" visible="true" press="handleCancelPress" />
+				</contentRight>
+			</Bar>
+		</footer>
+    </Page>
+</mvc:View>
